@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSignal - Identify Talent, Not Just Resumes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <span class="top-bar-text">Hire the best developers, 5x faster.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <div class="logo">
+                        <i class="fas fa-code"></i>
+                        <span>CodeSignal</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#companies">For Companies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#developers">For Developers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#solutions">Solutions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pricing">Pricing</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Identify Talent, Not Just Resumes</h1>
+                        <p class="hero-subtitle">
+                            Use AI-powered coding challenges to find the best developers. 
+                            Skip the resume screening and see actual coding skills in action.
+                        </p>
+                        <button class="btn btn-primary btn-lg cta-button">
+                            Request a Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="code-editor-container">
+                        <div class="code-editor-header">
+                            <div class="editor-tabs">
+                                <div class="tab active">Challenge.js</div>
+                                <div class="tab">Solution</div>
+                            </div>
+                            <div class="editor-controls">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="code-editor">
+                            <pre><code id="codeEditor">// Two Sum Problem
+// Given an array of integers and a target sum,
+// return indices of two numbers that add up to target
+
+function twoSum(nums, target) {
+    // Your code here
+    const map = new Map();
+    
+    for (let i = 0; i < nums.length; i++) {
+        const complement = target - nums[i];
+        
+        if (map.has(complement)) {
+            return [map.get(complement), i];
+        }
+        
+        map.set(nums[i], i);
+    }
+    
+    return [];
+}
+
+// Test cases
+console.log(twoSum([2, 7, 11, 15], 9)); // [0, 1]
+console.log(twoSum([3, 2, 4], 6));      // [1, 2]</code></pre>
+                        </div>
+                        <div class="code-output">
+                            <div class="output-header">Output</div>
+                            <div class="output-content" id="codeOutput">[0, 1]
+[1, 2]</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Companies Section -->
+    <section id="companies" class="companies-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">For Companies</h2>
+                    <p class="section-subtitle">Hire with confidence using our comprehensive assessment platform</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Plagiarism Detection</h3>
+                        <p>Advanced AI detects copied code and ensures authentic solutions from candidates.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Custom Assessments</h3>
+                        <p>Create tailored coding challenges that match your specific role requirements.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Candidate Benchmarking</h3>
+                        <p>Compare candidates against industry standards and your team's performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Developers Section -->
+    <section id="developers" class="developers-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Get Discovered by Top Tech Companies</h2>
+                    <p class="section-subtitle">
+                        Showcase your coding skills to leading technology companies. 
+                        Our platform connects talented developers with opportunities at scale.
+                    </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Practice with real-world coding challenges</li>
+                        <li><i class="fas fa-check"></i> Get matched with relevant job opportunities</li>
+                        <li><i class="fas fa-check"></i> Build a portfolio that speaks for itself</li>
+                        <li><i class="fas fa-check"></i> Join a community of skilled developers</li>
+                    </ul>
+                    <button class="btn btn-outline-primary btn-lg">Start Coding</button>
+                </div>
+                <div class="col-lg-6">
+                    <div class="developer-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-label">Active Developers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Partner Companies</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Logos -->
+    <section class="customer-logos">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h3 class="logos-title">Trusted by Leading Tech Companies</h3>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div class="logo-item">Google</div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div class="logo-item">Microsoft</div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div class="logo-item">Amazon</div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div class="logo-item">Meta</div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div class="logo-item">Apple</div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div class="logo-item">Netflix</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Product</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">For Companies</a></li>
+                        <li><a href="#">For Developers</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Developer Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Connect</h5>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Bar -->
+    <div class="bottom-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2025 CodeSignal. Developed by <a href="https://rivertheme.com/" target="_blank" rel="noopener noreferrer" class="rivertheme-link">RiverTheme</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
